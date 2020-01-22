@@ -1,0 +1,9 @@
+---
+- name: Systemd script
+  template:
+    src: zookeeper.service.j2
+    dest: '/etc/systemd/system/{{ zk_service_name }}.service'
+    mode: 0664
+  become: true
+  notify:
+    - restart Zookeeper

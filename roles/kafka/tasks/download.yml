@@ -1,0 +1,15 @@
+---
+- name: Check kafka tar file existence
+  stat:
+    path: "{{ download_dir }}/kafka_{{ scala_version }}-{{ version }}.gz"
+  register: kafka_tar
+
+- name: Copy artifact to destination
+  copy:
+    src: "{{ download_dir }}/kafka_{{ scala_version }}-{{ version }}.gz"
+    dest: '{{ download_dir }}'
+  register: file_downloaded
+  retries: 5
+  delay: 2
+  until: file_downloaded is succeeded
+  when: not kafka_tar.stat.exists

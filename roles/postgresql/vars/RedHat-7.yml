@@ -1,0 +1,15 @@
+---
+__postgresql_version: "10.11"
+__postgresql_data_dir: "/var/lib/pgsql/10/data"
+__postgresql_bin_path: "/usr/pgsql-10/bin"
+__postgresql_config_path: "/var/lib/pgsql/10/data"
+__postgresql_daemon: postgresql-10
+__postgresql_packages:
+  - /opt/install_package/postgres/postgresql10-10.11-2PGDG.rhel7.x86_64.rpm
+  - /opt/install_package/postgres/postgresql10-contrib-10.11-2PGDG.rhel7.x86_64.rpm
+  - /opt/install_package/postgres/postgresql10-libs-10.11-2PGDG.rhel7.x86_64.rpm
+  - /opt/install_package/postgres/postgresql10-plperl-10.11-2PGDG.rhel7.x86_64.rpm
+  - /opt/install_package/postgres/postgresql10-plpython-10.11-2PGDG.rhel7.x86_64.rpm
+  - /opt/install_package/postgres/postgresql10-pltcl-10.11-2PGDG.rhel7.x86_64.rpm
+  - /opt/install_package/postgres/postgresql10-server-10.11-2PGDG.rhel7.x86_64.rpm
+  - /opt/install_package/postgres/tcl-8.5.13-8.el7.x86_64.rpm

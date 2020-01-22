@@ -1,0 +1,11 @@
+---
+- name: Converge
+  hosts: all
+  become: true
+
+  pre_tasks:
+    - include_tasks: java-8.yml
+
+  roles:
+    - geerlingguy.java
+    - seljuke.zookeeper

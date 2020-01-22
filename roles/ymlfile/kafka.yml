@@ -1,0 +1,15 @@
+---
+#- name: Install java
+ # hosts: all
+  #roles:
+   # - role: java
+#- name: Install zookeeper
+ # hosts: zookeepers
+  #roles:
+   # - role: zookeeper
+    #  zk_inventory_group: zookeepers
+
+- name: Install kafka
+  hosts: kafka
+  roles:
+    - role: kafka

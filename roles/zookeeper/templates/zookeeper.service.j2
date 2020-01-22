@@ -1,0 +1,21 @@
+# {{ansible_managed}}
+
+[Unit]
+Description=Zookeeper Daemon
+Documentation=http://zookeeper.apache.org
+Requires=network.target remote-fs.target
+After=network.target remote-fs.target
+Wants=network.target remote-fs.target
+
+[Service]    
+Type=simple
+WorkingDirectory={{zk_dir}}
+User={{ zk_user }}
+Group={{ zk_user }}
+ExecStart={{zk_dir}}/bin/zkServer.sh start-foreground {{zk_dir}}/conf/zoo.cfg
+ExecStop={{zk_dir}}/bin/zkServer.sh stop
+TimeoutSec=30
+Restart=on-abnormal
+
+[Install]
+WantedBy=default.target

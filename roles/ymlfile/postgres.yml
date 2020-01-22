@@ -1,0 +1,6 @@
+---
+- name: install postgres
+  hosts: localhost
+  roles:
+    - role: postgresql
+      become: yes

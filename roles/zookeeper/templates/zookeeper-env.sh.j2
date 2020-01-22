@@ -1,0 +1,3 @@
+export ZOO_LOG_DIR={{ zk_log_dir }}
+export SERVER_JVMFLAGS="-Xms{{ zk_initial_heap_size }} -Xmx{{ zk_max_heap_size }} -Dcom.sun.management.jmxremote.authenticate=false -Dcom.sun.management.jmxremote.ssl=false -Djava.rmi.server.hostname=127.0.0.1 -Dcom.sun.management.jmxremote.port={{ zk_jmx_port }} {{ zk_jvm_opts }}"
+export ZOO_LOG4J_PROP="{{ zk_log_level }},ROLLINGFILE"

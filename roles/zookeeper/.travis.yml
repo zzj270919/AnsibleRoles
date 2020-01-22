@@ -1,0 +1,24 @@
+sudo: required
+language: python
+ 
+services:
+  - docker
+
+env:
+  global:
+    - ROLE_NAME: zookeeper
+  matrix:
+    - MOLECULE_DISTRO: centos7
+    - MOLECULE_DISTRO: ubuntu1804
+ 
+install:
+  - pip install molecule docker
+
+before_script:
+  - cd ../
+  - mv ansible-role-$ROLE_NAME seljuke.$ROLE_NAME
+  - cd seljuke.$ROLE_NAME
+
+script:
+  # Run tests.
+  - molecule test
